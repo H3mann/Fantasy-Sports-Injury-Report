@@ -2,19 +2,23 @@ angular.module('fantasy.table', [])
 
 .controller('fantasyCtrl', function ($scope, fantasy) {
   // Your code here
+console.log('test')
 
+   $scope.data = {};
+   console.log($scope.data);
 
-   $scope.players = ['player1','player2','player3'];
-   Links.getAll()
-      .then(function (links) {
-        $scope.data.links = links;
+   var initializePlayers = function () {
+    fantasy.getAll()
+      .then(function (players) {
+        $scope.data.players = players;
       })
       .catch(function (error) {
         console.error(error);
       });
+  };
 
-   $scope.players = players;
-
+  initializePlayers();
+  });
 
     
 
@@ -27,6 +31,6 @@ angular.module('fantasy.table', [])
      
 
 
-  });
+ 
 
      

@@ -12,7 +12,7 @@
 
 
 
-    <form ng-submit="getAll()" ng-controller="fantasyCtrl">
+    <form ng-submit="getAll()">
   Enter text and hit enter:
   <input type="text" ng-model="text" name="text" />
   <input type="submit" id="submit" value="Submit" />
@@ -23,14 +23,20 @@
       </button>
 </form>
 
-<h1 ng-repeat="x in data">{{x}}</h1>
 
-<table>
-	<thead>
-		<tr> Name </tr>
-		<tr> Injury </tr>
-	<thead>
-</table>
+</table> -->
+<div ng-controller="fantasyCtrl">
+<div ng-repeat = "player in data.players"> {{player.name}} 
+{{play.birth_date}} </div>
+<!-- <p ng-repeat = 'player in data.players'>
+{{players}}
+</p> -->
+
+</div>
+
+
+
+
 
 
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
