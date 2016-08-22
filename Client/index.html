@@ -1,0 +1,51 @@
+
+
+<!DOCTYPE html>
+<html ng-app='fantasy'>
+  <head>
+    <meta charset="utf-8" />
+    <title>Fantasy Sports Injury Report</title>
+    
+  </head>
+  <body>
+    <h1>Fantasy Sports Injury Report</h1>
+
+
+
+    <form ng-submit="getAll()" ng-controller="fantasyCtrl">
+  Enter text and hit enter:
+  <input type="text" ng-model="text" name="text" />
+  <input type="submit" id="submit" value="Submit" />
+  <pre>list={{list}}</pre>
+
+  <button ng-click = "getAll()">
+        See All Injured Players
+      </button>
+</form>
+
+<h1 ng-repeat="x in data">{{x}}</h1>
+
+<table>
+	<thead>
+		<tr> Name </tr>
+		<tr> Injury </tr>
+	<thead>
+</table>
+
+
+    <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
+    <div ng-view></div>
+
+    <script src="../node_modules/angular/angular.js"></script>
+   
+
+    <script src="controller.js"></script>
+    <script src="factory.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+
+
+
+
